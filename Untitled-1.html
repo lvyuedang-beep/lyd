@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>绿月党 - 政党宣传官网</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --dark: #111;
+    }
+    body {
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+      scroll-behavior: smooth;
+      opacity: 0;
+      animation: pageFadeIn 1.2s ease-out forwards;
+    }
+    @keyframes pageFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    /* 黑色导航栏 */
+    .navbar {
+      background-color: #000 !important;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .navbar-brand, .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: #ffc107 !important;
+    }
+    /* Logo 3:2 比例，直角 */
+    .navbar-brand img {
+      height: 40px;
+      width: 60px;
+      object-fit: cover;
+      border-radius: 0;
+      margin-right: 10px;
+    }
+    /* 英雄区 */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                  url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1600') center/cover no-repeat;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+    /* 从左侧淡入 */
+    .fade-from-left {
+      opacity: 0;
+      transform: translateX(-80px);
+      animation: fadeFromLeft 1.2s ease-out 0.3s forwards;
+    }
+    @keyframes fadeFromLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    /* 从右侧淡入 */
+    .fade-from-right {
+      opacity: 0;
+      transform: translateX(80px);
+      animation: fadeFromRight 1.2s ease-out 0.5s forwards;
+    }
+    @keyframes fadeFromRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    /* 按钮居中淡入 */
+    .fade-center {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeCenter 1s ease-out 0.9s forwards;
+    }
+    @keyframes fadeCenter {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .section {
+      padding: 80px 0;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section-title {
+      position: relative;
+      margin-bottom: 50px;
+      font-weight: 700;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    .bg-light-gray {
+      background-color: #f8f9fa;
+    }
+    footer {
+      background: #111;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 黑色导航栏 + Logo -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+        <img src="logo.png" alt="绿月党 Logo">
+        绿月党
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#origin">政党来源</a></li>
+          <li class="nav-item"><a class="nav-link" href="#goals">政党目标</a></li>
+          <li class="nav-item"><a class="nav-link" href="#status">现状与任务</a></li>
+          <li class="nav-item"><a class="nav-link" href="#join">成为党员</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 英雄区（首页大图） -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="display-4 fw-bold mb-3 fade-from-left">绿月党</h1>
+      <p class="lead mb-4 fade-from-right">大地与天体的理念指引我们探索一条跳出中国历史周期律的道路</p>
+      <a href="#join" class="btn btn-warning btn-lg px-5 fade-center">立即加入我们</a>
+    </div>
+  </section>
+
+  <!-- 1. 政党来源 -->
+  <section id="origin" class="section">
+    <div class="container">
+      <h2 class="text-center section-title">政党来源</h2>
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <img src="qz.png" class="img-fluid shadow" alt="绿月党标志">
+        </div>
+        <div class="col-lg-6">
+          <h4 class="mb-3">政党来源</h4>
+          <p class="text-muted">
+            
+          </p>
+          <p class="text-muted">
+            共产党执政，造成了严重的社会不公平，非正义事情频发，无数平凡人的痛苦和眼泪是催生绿月党的根本动因。
+          </p>
+          <ul class="list-unstyled">
+            <li class="mb-2">✓ 2018年正式注册成立</li>
+            <li class="mb-2">✓ 创始成员来自教育、科技、法律等领域</li>
+            <li class="mb-2">✓ 始终坚持非暴力、民主协商的原则</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 政党目标 -->
+  <section id="goals" class="section bg-light-gray">
+    <div class="container">
+      <h2 class="text-center section-title">政党目标</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm card-hover">
+            <div class="card-body text-center p-4">
+              <div class="display-4 text-primary mb-3">①</div>
+              <h5 class="card-title">民生优先</h5>
+              <p class="card-text text-muted">推动住房、教育、医疗、养老等基本公共服务更加公平可及，让普通百姓真正受益。</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm card-hover">
+            <div class="card-body text-center p-4">
+              <div class="display-4 text-primary mb-3">②</div>
+              <h5 class="card-title">科技创新</h5>
+              <p class="card-text text-muted">大力支持基础研究与应用创新，建设创新型国家，抢占未来产业制高点。</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm card-hover">
+            <div class="card-body text-center p-4">
+              <div class="display-4 text-primary mb-3">③</div>
+              <h5 class="card-title">制度完善</h5>
+              <p class="card-text text-muted">推动法治建设与治理现代化，提升政府效能与透明度，保障公民权利。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 现状与任务 -->
+  <section id="status" class="section">
+    <div class="container">
+      <h2 class="text-center section-title">政党现状与任务</h2>
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <h4>当前现状</h4>
+          <p class="text-muted">
+            目前绿月党已在全国多个省市建立地方组织，拥有正式党员超过12万人，支持者超过百万。我们积极参与地方议政、社区服务与政策研究，已提出多份有影响力的政策建议。
+          </p>
+          <ul>
+            <li>党员规模持续增长</li>
+            <li>地方组织覆盖主要城市</li>
+            <li>政策研究团队日益专业</li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <h4>近期主要任务</h4>
+          <div class="list-group">
+            <div class="list-group-item">1. 深化基层组织建设，提升服务能力</div>
+            <div class="list-group-item">2. 围绕民生热点开展专项调研与提案</div>
+            <div class="list-group-item">3. 加强青年党员培养与储备</div>
+            <div class="list-group-item">4. 推动数字治理与信息公开改革建议</div>
+            <div class="list-group-item">5. 扩大与社会各界的对话与合作</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 成为党员 -->
+  <section id="join" class="section bg-light-gray">
+    <div class="container">
+      <h2 class="text-center section-title">成为党员</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card border-0 shadow">
+            <div class="card-body p-4 p-md-5">
+              <h4 class="mb-4 text-center">入党申请与流程</h4>
+              <p class="text-muted text-center mb-4">
+                我们欢迎认同绿月党理念、愿意为国家和社会进步贡献力量的公民加入。入党需经过申请、考察、培训与审批等环节。
+              </p>
+              
+              <ol class="mb-4">
+                <li class="mb-2"><strong>在线提交申请</strong> —— 填写基本信息与入党动机</li>
+                <li class="mb-2"><strong>地方组织审核</strong> —— 约1-2周内反馈</li>
+                <li class="mb-2"><strong>参加入党培训</strong> —— 学习章程与核心政策</li>
+                <li class="mb-2"><strong>正式成为预备党员</strong> —— 进入考察期</li>
+              </ol>
+
+              <form>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">姓名</label>
+                    <input type="text" class="form-control" placeholder="请输入真实姓名" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">手机号</label>
+                    <input type="tel" class="form-control" placeholder="用于联系" required>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">所在地区</label>
+                    <input type="text" class="form-control" placeholder="省 / 市">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">入党动机（简要）</label>
+                    <textarea class="form-control" rows="3" placeholder="请简述你为何想加入绿月党"></textarea>
+                  </div>
+                  <div class="col-12 text-center mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg px-5">提交申请</button>
+                  </div>
+                </div>
+              </form>
+              <p class="text-center text-muted small mt-3">
+                提交后我们将在3个工作日内与您联系。本表仅为示例，实际请对接真实后台系统。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="py-5">
+    <div class="container text-center">
+      <h5 class="text-white mb-3">绿月党</h5>
+      <p class="mb-2">为人民服务 · 推动社会进步</p>
+      <p class="small mb-0">© 2025 绿月党 版权所有 | 本网站为虚构示例，仅供学习与演示使用</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // 滚动时板块淡入效果
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
